@@ -3,9 +3,8 @@
 # Documento scritto da Alessandro Chimetto <alessandro.chimetto.it@gmail.com>
 # e rilasciato sotto licenza Unlicense <http://unlicense.org/>
 
-cd $GITHUB_WORKSPACE
-mkdir $2
-cd $2
+mkdir -p $GITHUB_WORKSPACE/$2
+cd $GITHUB_WORKSPACE/$2
 
 while IFS= read -r path $1
 do
