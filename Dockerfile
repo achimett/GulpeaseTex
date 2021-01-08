@@ -4,6 +4,7 @@
 FROM homebrew/ubuntu20.04
 
 ENV LANG en_US.UTF-8
+ENV HOMEBREW_NO_ANALYTICS 1
 
 RUN apt-get update && apt-get install -y locales
 RUN locale-gen
