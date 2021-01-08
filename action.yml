@@ -1,0 +1,21 @@
+# Documento scritto da Alessandro Chimetto <alessandro.chimetto.it@gmail.com>
+# e rilasciato sotto licenza Unlicense <http://unlicense.org/>
+
+name: 'GulpeaseTex'
+author: 'Alessandro Chimetto <alessandro.chimetto.it@gmail.com>'
+description: "Calcola l'indice di Gulpease a partire da un file .tex"
+inputs:
+  files-to-evaluate:
+    description: "File testuale contenente il percorso dei file di cui calcolare l'indice di Gulpease"
+    required: true
+    default: '.github/files-to-evaluate.txt'
+  directory:
+    description: "Nome della cartella in cui salvare i risultati del calcolo dell'indice di Gulpease"
+    required: false
+    default: 'gulpease'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.files-to-evaluate }}
+    - ${{ inputs.directory }}
