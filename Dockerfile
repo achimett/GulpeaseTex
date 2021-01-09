@@ -9,7 +9,7 @@ ENV HOMEBREW_NO_ANALYTICS 1
 RUN apt-get update && apt-get install -y locales
 RUN locale-gen
 
-RUN brew update && brew install python opendetex
+RUN brew update && brew install python@3.8 opendetex
 RUN pip3 install textract
 
 COPY gulpease.py /gulpease.py
